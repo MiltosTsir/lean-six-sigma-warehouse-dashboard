@@ -1,70 +1,105 @@
 # Lean Six Sigma Warehouse Dashboard
 
-This project applies the **Lean Six Sigma DMAIC methodology** to a **simulated warehouse and inventory process**, using **Excel** and **Tableau** for data analysis and visualization.
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Last Commit](https://img.shields.io/github/last-commit/MiltosTsir/lean-six-sigma-warehouse-dashboard)](https://github.com/MiltosTsir/lean-six-sigma-warehouse-dashboard/commits/main)
+
+## Project Overview
+
+This project applies the **Lean Six Sigma DMAIC methodology** to a **simulated warehouse and inventory management process**, using **Excel** and **Tableau** for analysis and visualization.
+
+It demonstrates how Lean Six Sigma tools can help reduce **picking errors**, **stockouts**, and **inefficiencies** in warehouse operations.
 
 ---
 
-## Project Objective
+## Objective
 
-To reduce **picking errors**, **stockouts**, and **process inefficiencies** in a warehouse environment by analyzing operational data and applying Lean Six Sigma principles.
+Reduce operational waste and improve performance by:
+- Minimizing picking errors
+- Reducing stockout incidents
+- Optimizing picking time and inventory control
+- Monitoring improvements via a real-time dashboard
 
 ---
 
 ## Project Structure
+
 lean-six-sigma-warehouse-dashboard/
 ├── data/
 │ └── warehouse_inventory_dataset_30000.xlsx # Cleaned dataset (30,000 rows)
 ├── analysis/
-│ ├── excel_kpis_summary.xlsx # KPI calculations & pivot tables
+│ ├── excel_kpis_summary.xlsx # Excel file with KPIs & pivot tables
 │ └── tableau_dashboard.png # Tableau dashboard screenshot
 ├── docs/
-│ ├── column_descriptions.md # Column-level data dictionary
-│ └── dmaic_report.md # Full DMAIC documentation
+│ ├── dmaic_report.md # Full DMAIC project documentation
+│ └── column_descriptions.md # Column-level data dictionary
 └── README.md # Project overview
 
 
 ---
 
-## 🛠️ Tools Used
+## Methodology – DMAIC
 
-- **Excel** – for KPI calculations, pivot tables, and root cause analysis  
-- **Tableau** – for interactive data visualization and dashboard creation
+| Phase    | Description |
+|----------|-------------|
+| **Define**   | Identified high error rate, stockouts, and variability in lead time |
+| **Measure**  | Calculated KPIs using Excel (e.g., picking error rate, stockout rate, lead time) |
+| **Analyze**  | Root causes identified using segmentation & Pareto charts |
+| **Improve**  | Layout redesign, picker training, smarter reorder point logic |
+| **Control**  | Tableau dashboard tracks key metrics over time |
 
----
-
-## 🔁 Methodology: DMAIC
-
-- **Define** – Identified high picking error rates, stockouts, and fulfillment delays  
-- **Measure** – Tracked KPIs: picking error rate, order accuracy, stockouts, lead time  
-- **Analyze** – Root causes identified using Pareto charts and segmentation (region, product, shipping method)  
-- **Improve** – Suggested layout changes, picker training, reorder point adjustments  
-- **Control** – Tableau dashboard implemented to monitor KPIs over time  
-
-See full analysis here: [`docs/dmaic_report.md`](docs/dmaic_report.md)
+Full report: [`docs/dmaic_report.md`](docs/dmaic_report.md)
 
 ---
 
-## Dataset & Columns
+## Dataset
 
-A **synthetic dataset** with **30,000 simulated warehouse orders**, including:
+- **Rows:** 30,000 simulated warehouse transactions  
+- **Generated:** Synthetically, for educational & portfolio purposes  
+- **Key Fields:**
+  - Order metadata: `Order ID`, `Order Date`, `Region`, `SKU`
+  - Process metrics: `Units Ordered`, `Units Shipped`, `Picking Time`, `Lead Time`
+  - Inventory metrics: `Inventory Level`, `Reorder Point`, `Stockout`, `Order Accuracy (%)`
 
-- Order metadata: `Order ID`, `Order Date`, `Region`, `SKU`
-- Inventory metrics: `Inventory Level`, `Reorder Point`, `Stockout`
-- Process metrics: `Picking Time`, `Order Accuracy`, `Lead Time`, `Shipping Method`
-
-Full column descriptions: [`docs/column_descriptions.md`](docs/column_descriptions.md)
-
----
-
-## ✅ Key Outcomes (Simulated)
-
-- 📉 **Picking error rate reduced by 18%**
-- 📦 **Stockout incidents decreased by 22%**
-- 📈 **Order accuracy improved to 96.5%**
-- 📊 **Dashboard built to monitor performance in real time**
+📄 Column descriptions: [`docs/column_descriptions.md`](docs/column_descriptions.md)
 
 ---
 
-## ⚠️ Disclaimer
+## Key Outcomes (Simulated)
 
-This project uses **synthetic data** generated for **educational and portfolio purposes only**. It does not reflect real customer or business data.
+| Metric                | Before     | After       | Change    |
+|-----------------------|------------|-------------|-----------|
+| Picking Error Rate    | 10.5%      | **8.58%**    | ↓ 18%     |
+| Stockout Rate         | 32.5%      | **25.32%**   | ↓ 22%     |
+| Order Accuracy        | 89%        | **91.42%**   | ↑ 2.7%    |
+| Lead Time             | 6.2 days   | **5.51 days**| ↓ 11%     |
+
+---
+
+## Dashboard Preview
+
+![Dashboard Preview](analysis/tableau_dashboard.png)
+
+---
+
+## How to Use
+
+1. Open the Excel file: `analysis/excel_kpis_summary.xlsx`
+   - Review KPI calculations, pivot tables, and root cause analysis
+2. Open the Tableau file (or image):
+   - See visual insights by category, region, shipping method
+3. Read the report:
+   - See full phase-by-phase analysis in `docs/dmaic_report.md`
+
+---
+
+## Disclaimer
+
+This project uses **synthetic data** and is intended for **educational and portfolio use only**.  
+It does **not** represent actual warehouse operations or real customer data.
+
+---
+
+## License
+
+This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+
