@@ -101,5 +101,10 @@ It does **not** represent actual warehouse operations or real customer data.
 
 ## License
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License**.
+
+You are free to use, modify, and distribute this project for personal or commercial purposes, as long as you include the original license and attribution.
+
+See the full license text in the [`LICENSE`](LICENSE) file.
+
 
