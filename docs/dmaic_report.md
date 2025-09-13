@@ -9,7 +9,7 @@ This document outlines the Lean Six Sigma approach applied to a simulated wareho
 
 ---
 
-## Problem Statement (Define)
+## DEFINE Phase
 
 ### Process Description
 The process under analysis is the **warehouse order fulfillment** workflow, focusing on the stages of **order picking and inventory availability**. Each order is picked, packed, and shipped from warehouse stock based on customer demand.
@@ -30,12 +30,12 @@ These issues lead to delays, customer dissatisfaction, and higher operational co
 ### Critical to Quality (CTQ) Requirements
 To meet customer expectations and improve process efficiency, the following goals are set:
 
-| Metric | Current | Target |
-|--------|---------|--------|
-| Picking Error Rate | ~13% (estimated) | **< 5%** |
-| Stockout Rate | ~17% (estimated) | **< 3%** |
-| Order Accuracy | ~89% | **> 95%** |
-| Avg. Lead Time | ~5 days | **< 3 days** |
+| **Metric**            | **Current**        | **Target**    |
+|------------------------|--------------------|----------------|
+| Picking Error Rate     | ~13% (estimated)   | **< 5%**       |
+| Stockout Rate          | ~17% (estimated)   | **< 3%**       |
+| Order Accuracy         | ~89%               | **> 95%**      |
+| Avg. Lead Time         | ~5 days            | **< 3 days**   |
 
 ### Scope
 The scope of the project includes:
@@ -48,58 +48,64 @@ The scope of the project includes:
 - Supplier performance
 - External shipping/delivery delays
 
-
 ---
 
 ## MEASURE Phase
 
 ### Data Source
-The dataset used contains **30,000 simulated warehouse orders**, including fields such as:
-- Units Ordered vs. Units Shipped
-- Inventory Level & Reorder Point
-- Picking Time (min)
-- Order Accuracy (%)
-- Lead Time (days)
 
-Data was generated synthetically to reflect typical warehouse operations and cleaned using Excel. Key fields were validated for consistency and outliers.
+The dataset includes **30,000 synthetic warehouse transactions**, designed to simulate real-world logistics operations. Key fields include:
+
+- **Units Ordered** vs. **Units Shipped**
+- **Inventory Level** & **Reorder Point**
+- **Warehouse Picking Time (min)**
+- **Order Accuracy (%)**
+- **Lead Time (days)**
+
+Data was cleaned and analyzed in **Excel**, using formulas, filters, and pivot tables. Outliers and unrealistic values (e.g., order accuracy > 100%) were identified and excluded to ensure data quality.
 
 ---
 
 ### Key Performance Indicators (KPIs)
 
-The following metrics were calculated using Excel formulas and pivot tables:
+The following KPIs were defined to measure current warehouse performance:
 
-| KPI | Description | Current Value |
-|-----|-------------|----------------|
-| **Picking Error Rate** | % of orders where shipped units ≠ ordered units | **13.2%** |
-| **Order Accuracy (%)** | (Units Shipped / Units Ordered) * 100 | **89.6%** |
-| **Stockout Rate** | % of orders where inventory < reorder point | **17.4%** |
-| **Avg. Picking Time** | Mean time to pick orders | **15.1 minutes** |
-| **Avg. Lead Time** | Days from order to delivery (for completed orders) | **5.3 days** |
+| **KPI**                | **Description**                                              | **Value**        |
+|------------------------|--------------------------------------------------------------|------------------|
+| **Picking Error Rate** | % of orders with incorrect picking (errors in quantity/item) | **8.58%**        |
+| **Order Accuracy**     | % of orders delivered with exactly correct quantity          | **91.42%**       |
+| **Stockout Rate**      | % of orders affected by inventory shortages (stockouts)      | **25.32%**       |
+| **Avg. Picking Time**  | Average time to complete picking per order                   | **15.00 minutes**|
+| **Avg. Lead Time**     | Average time from order placement to delivery                | **5.51 days**    |
+
+> *All calculations were performed using Excel formulas. Cleaned values were used for final KPI reporting.*
 
 ---
 
 ### Methodology
 
-KPIs were calculated as follows:
-- **Order Accuracy (%)** = `(Units Shipped / Units Ordered) * 100`
-- **Picking Error** = `1 if Units Ordered ≠ Units Shipped, else 0`
-- **Stockout** = `1 if Inventory Level < Reorder Point, else 0`
-- **Lead Time** = Difference between Order Date and Ship Date (when applicable)
+The KPIs were calculated using logic-based Excel formulas and pivot tables. Key formula logic includes:
 
-All calculations were performed in Excel using:
-- `IF()`, `COUNTIF()`, `AVERAGE()`, and Pivot Tables
-- Filtering by region, category, and shipping method for segmentation
+- **Order Accuracy (%)** = `(Units Shipped / Units Ordered) * 100`
+- **Picking Error** = `1` if `Units Ordered ≠ Units Shipped`, else `0`
+- **Stockout** = `1` if `Inventory Level < Reorder Point`, else `0`
+- **Lead Time** = `Order Date – Ship Date` (for completed orders only)
+
+All calculations were performed using:
+- Excel functions: `IF()`, `COUNTIF()`, `AVERAGE()`, and Pivot Tables
+- Filtering and segmentation by: `Region`, `Product Category`, `Shipping Method`
 
 ---
 
 ### Initial Findings
 
-- High stockout rates in specific SKUs and product categories
-- Picking times vary widely between regions
-- Higher error rate in **Same Day** orders
+Baseline analysis revealed the following insights:
 
-These baselines will be used in the Analyze phase to find root causes and improvement opportunities.
+- Stockouts are highly concentrated in specific SKUs and product categories  
+- Picking times show high variability across regions  
+- Higher error rates observed in Same-Day shipping orders  
+
+These insights will guide the Analyze Phase, where root causes will be identified and prioritized for improvement.
 
 
 ---
