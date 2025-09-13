@@ -50,7 +50,7 @@ The scope of the project includes:
 
 ---
 
-## 🔍 Analyze Phase
+## Analyze Phase
 
 During this phase, we analyzed the root causes behind warehouse inefficiencies using Excel pivot tables, Pareto charts, and descriptive statistics. The main focus areas were:
 
@@ -60,7 +60,7 @@ During this phase, we analyzed the root causes behind warehouse inefficiencies u
 
 ---
 
-### 📊 Pareto Analysis – Stockouts by Product Category
+### Pareto Analysis – Stockouts by Product Category
 
 A Pareto-style analysis was performed on stockouts across product categories.
 
@@ -75,7 +75,7 @@ A Pareto-style analysis was performed on stockouts across product categories.
 
 ---
 
-### 📦 Pareto Analysis – Picking Errors by Product Category
+### Pareto Analysis – Picking Errors by Product Category
 
 | Product Category | Picking Error Rate (%) |
 |------------------|-------------------------|
@@ -89,7 +89,7 @@ A Pareto-style analysis was performed on stockouts across product categories.
 
 ---
 
-### 📐 Order Accuracy Variability by Shipping Method
+### Order Accuracy Variability by Shipping Method
 
 | Shipping Method | Avg. Accuracy (%) | Std. Deviation |
 |------------------|-------------------|----------------|
@@ -101,7 +101,7 @@ A Pareto-style analysis was performed on stockouts across product categories.
 
 ---
 
-### 🏷️ Order Accuracy Variability by Product Category
+### Order Accuracy Variability by Product Category
 
 | Product Category | Avg. Accuracy (%) | Std. Deviation |
 |------------------|-------------------|----------------|
@@ -114,21 +114,21 @@ A Pareto-style analysis was performed on stockouts across product categories.
 
 ---
 
-### 🌍 Order Accuracy Variability by Region
+### Order Accuracy Variability by Region
 
 | Region | Avg. Accuracy (%) | Std. Deviation |
 |--------|-------------------|----------------|
 | East   | 99.56%            | 2.43%  
 | North  | 99.54%            | 2.46%  
 | South  | 99.50%            | 2.53%  
-| West   | 99.47%            | 2.63% ✅  
+| West   | 99.47%            | 2.63% 
 
 > The **West region** consistently underperforms in both accuracy and stability.  
 This region should be prioritized for improvement in process training, layout optimization, or staffing evaluation.
 
 ---
 
-### ✅ Summary of Root Causes Identified
+### Summary of Root Causes Identified
 
 - High stockouts in **Electronics** and **Toys**
 - High picking error rates in **Electronics**, **Toys**, and **Apparel**
@@ -139,16 +139,102 @@ This region should be prioritized for improvement in process training, layout op
 
 ---
 
-## Suggested Improvements (Improve)
+## IMPROVE Phase
 
-Based on the analysis, we proposed:
+### Objective
 
-- Increase training for warehouse staff to reduce picking errors  
-- Review and adjust reorder points for high-risk SKUs  
-- Improve layout efficiency to reduce average picking time  
-- Track real-time inventory levels more frequently
+Based on the findings from the Analyze phase, several targeted actions were proposed to reduce errors, stockouts, and process variability in the warehouse operation.
 
 ---
+
+### 1. Inventory Replenishment Logic (Stockouts)
+
+**Pivot Table**: Stockouts by Product Category  
+- **Observation**: Electronics (25.65%) and Toys (25.49%) had the highest share of stockouts.  
+- **Action**: Adjust the **Reorder Point logic** for these categories based on actual consumption patterns.
+
+Suggested Improvement:
+- Implement demand-based dynamic reorder points using moving average or safety stock buffers.
+- Review SKU-level inventory policies for high-rotation items.
+
+---
+
+### 2. Picking Errors & Layout Redesign
+
+**Pivot Table**: Picking Errors by Product Category  
+- **Observation**: Electronics (25.41%) and Furniture (25.14%) contribute the most to overall picking errors.  
+- **Action**: Redesign layout to optimize frequently picked items and reduce human error.
+
+Suggested Improvement:
+- Place high-frequency items closer to packing stations.
+- Color-code shelving zones by category for faster access.
+
+---
+
+### 3. Barcode Scanning Justification
+
+**Pivot Table**: Picking Errors by Shipping Method  
+- **Observation**: All shipping methods (Express, Same Day, Standard) have nearly equal error distribution (~33%).  
+- **Action**: Introduce barcode scanning across all methods to ensure item verification before shipment.
+
+Suggested Improvement:
+- Pilot barcode scanning in one zone and scale based on impact on accuracy and time.
+- Integrate scan confirmation step in the workflow to avoid manual picking errors.
+
+---
+
+### 4. Targeted Training for West Region
+
+**Pivot Table**: Order Accuracy by Region  
+- **Observation**: The **West region** had the **lowest average accuracy (99.47%)** and the **highest StdDev (2.65%)**.  
+- **Action**: Launch focused training sessions in the West warehouse.
+
+Suggested Improvement:
+- Reinforce SOPs through weekly workshops and on-the-floor coaching.
+- Track improvements over time using KPIs and dashboard alerts.
+
+---
+
+### 5. Shipping Method Optimization
+
+**Pivot Table**: Order Accuracy by Shipping Method  
+- **Observation**: **Standard shipping** had the highest standard deviation (2.59%) in order accuracy.  
+- **Action**: Standardize packing and handling for standard shipments to reduce inconsistency.
+
+Suggested Improvement:
+- Create visual checklists for standard method packers.
+- Add final inspection step before dispatch for bulk standard orders.
+
+---
+
+### 6. Standardization & SOPs
+
+**Pivot Table**: Order Accuracy by Product Category × Region  
+- **Observation**: Variability across category–region combinations (e.g., Toys–West).  
+- **Action**: Develop **Standard Operating Procedures (SOPs)** for all key combinations.
+
+Suggested Improvement:
+- Use best-performing region as benchmark and replicate across others.
+- Document processes using flowcharts and integrate into onboarding/training.
+
+---
+
+### Summary of Proposed Improvements
+
+| Improvement Area           | Action Item                                      |
+|---------------------------|--------------------------------------------------|
+| Inventory Management      | Dynamic reorder points, demand-based planning    |
+| Picking Layout            | Zone redesign, fast-moving item prioritization   |
+| Error Prevention          | Barcode scanning system implementation           |
+| Regional Training         | West region accuracy training                    |
+| SOP Standardization       | Standard processes across product-region combos  |
+| Shipping Optimization     | Streamlined handling for Standard method         |
+
+---
+
+> 📈 These actions will be monitored in the **Control Phase** through KPIs and real-time dashboards built in Tableau.
+
+
 
 ## Control Plan (Control)
 
