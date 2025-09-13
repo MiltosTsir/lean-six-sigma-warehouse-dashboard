@@ -4,18 +4,54 @@ This document outlines the Lean Six Sigma approach applied to a simulated wareho
 
 ---
 
-## 📌 Project Title:
+## Project Title:
 **Improving Inventory Accuracy and Order Picking Efficiency in a Warehouse using Lean Six Sigma**
 
 ---
 
-## 🎯 Problem Statement (Define)
+## Problem Statement (Define)
 
-Order fulfillment errors and inventory inaccuracies lead to delays, stockouts, and increased operational costs. The goal of this project is to identify inefficiencies in the warehouse process and improve inventory control and picking accuracy using Lean Six Sigma tools.
+### Process Description
+The process under analysis is the **warehouse order fulfillment** workflow, focusing on the stages of **order picking and inventory availability**. Each order is picked, packed, and shipped from warehouse stock based on customer demand.
+
+### Problem Statement
+In recent months, the warehouse operation has experienced:
+- A high **picking error rate** (discrepancy between ordered and shipped units)
+- Frequent **stockouts** due to inventory misalignment
+- Variability in **order fulfillment times**
+
+These issues lead to delays, customer dissatisfaction, and higher operational costs.
+
+### Stakeholders & Customers
+- Warehouse and logistics team
+- Supply chain management
+- End customers expecting timely and accurate delivery
+
+### Critical to Quality (CTQ) Requirements
+To meet customer expectations and improve process efficiency, the following goals are set:
+
+| Metric | Current | Target |
+|--------|---------|--------|
+| Picking Error Rate | ~13% (estimated) | **< 5%** |
+| Stockout Rate | ~17% (estimated) | **< 3%** |
+| Order Accuracy | ~89% | **> 95%** |
+| Avg. Lead Time | ~5 days | **< 3 days** |
+
+### Scope
+The scope of the project includes:
+- Inventory management (stock levels, reorder points)
+- Order picking process (accuracy, time)
+- Shipping preparation (excluding external carrier performance)
+
+### Out of Scope
+- Inbound logistics
+- Supplier performance
+- External shipping/delivery delays
+
 
 ---
 
-## 📏 Metrics & Data (Measure)
+## Metrics & Data (Measure)
 
 We used a dataset of 30,000 warehouse order records with the following key metrics:
 
@@ -27,7 +63,7 @@ We used a dataset of 30,000 warehouse order records with the following key metri
 
 ---
 
-## 🔍 Root Cause Analysis (Analyze)
+## Root Cause Analysis (Analyze)
 
 Using tools like Pareto charts and basic data segmentation, we identified:
 
@@ -37,7 +73,7 @@ Using tools like Pareto charts and basic data segmentation, we identified:
 
 ---
 
-## 🚀 Suggested Improvements (Improve)
+## Suggested Improvements (Improve)
 
 Based on the analysis, we proposed:
 
@@ -48,7 +84,7 @@ Based on the analysis, we proposed:
 
 ---
 
-## 📊 Control Plan (Control)
+## Control Plan (Control)
 
 To ensure sustained improvement:
 
@@ -59,14 +95,14 @@ To ensure sustained improvement:
 
 ---
 
-## 🛠️ Tools Used
+## Tools Used
 
 - **Excel** – Data cleaning, KPIs, pivot tables  
 - **Tableau** – Visual dashboard to monitor performance
 
 ---
 
-## ✅ Outcome (Simulated)
+## Outcome (Simulated)
 
 - Picking error rate reduced by 18%  
 - Stockout incidents decreased by 22%  
