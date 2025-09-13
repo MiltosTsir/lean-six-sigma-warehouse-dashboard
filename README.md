@@ -29,14 +29,14 @@ lean-six-sigma-warehouse-dashboard/
 
 ---
 
-## 📊 Tools Used
+## Tools Used
 
 - **Excel** – for KPI calculations, pivot tables, and root cause analysis
 - **Tableau** – for data visualization and dashboard creation
 
 ---
 
-## 🧠 Methodology: DMAIC
+## Methodology: DMAIC
 
 - **Define:** Problem – high error rates and stockouts
 - **Measure:** KPIs like picking error, stockout rate, order accuracy, lead time
