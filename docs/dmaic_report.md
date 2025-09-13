@@ -51,25 +51,56 @@ The scope of the project includes:
 
 ---
 
-## Metrics & Data (Measure)
+## MEASURE Phase
 
-We used a dataset of 30,000 warehouse order records with the following key metrics:
+### Data Source
+The dataset used contains **30,000 simulated warehouse orders**, including fields such as:
+- Units Ordered vs. Units Shipped
+- Inventory Level & Reorder Point
+- Picking Time (min)
+- Order Accuracy (%)
+- Lead Time (days)
 
-- **Picking Error Rate** = % of orders with discrepancies between ordered and shipped units  
-- **Stockout Rate** = % of orders where inventory level < reorder point  
-- **Order Accuracy (%)**  
-- **Lead Time (days)** for completed orders  
-- **Warehouse Picking Time (minutes)**
+Data was generated synthetically to reflect typical warehouse operations and cleaned using Excel. Key fields were validated for consistency and outliers.
 
 ---
 
-## Root Cause Analysis (Analyze)
+### Key Performance Indicators (KPIs)
 
-Using tools like Pareto charts and basic data segmentation, we identified:
+The following metrics were calculated using Excel formulas and pivot tables:
 
-- High error rates in specific product categories and regions  
-- Delays concentrated in same-day shipping methods  
-- Stockouts driven by low reorder point thresholds or high demand spikes
+| KPI | Description | Current Value |
+|-----|-------------|----------------|
+| **Picking Error Rate** | % of orders where shipped units ≠ ordered units | **13.2%** |
+| **Order Accuracy (%)** | (Units Shipped / Units Ordered) * 100 | **89.6%** |
+| **Stockout Rate** | % of orders where inventory < reorder point | **17.4%** |
+| **Avg. Picking Time** | Mean time to pick orders | **15.1 minutes** |
+| **Avg. Lead Time** | Days from order to delivery (for completed orders) | **5.3 days** |
+
+---
+
+### Methodology
+
+KPIs were calculated as follows:
+- **Order Accuracy (%)** = `(Units Shipped / Units Ordered) * 100`
+- **Picking Error** = `1 if Units Ordered ≠ Units Shipped, else 0`
+- **Stockout** = `1 if Inventory Level < Reorder Point, else 0`
+- **Lead Time** = Difference between Order Date and Ship Date (when applicable)
+
+All calculations were performed in Excel using:
+- `IF()`, `COUNTIF()`, `AVERAGE()`, and Pivot Tables
+- Filtering by region, category, and shipping method for segmentation
+
+---
+
+### Initial Findings
+
+- High stockout rates in specific SKUs and product categories
+- Picking times vary widely between regions
+- Higher error rate in **Same Day** orders
+
+These baselines will be used in the Analyze phase to find root causes and improvement opportunities.
+
 
 ---
 
