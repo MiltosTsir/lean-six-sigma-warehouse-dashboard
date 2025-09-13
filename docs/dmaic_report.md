@@ -50,63 +50,92 @@ The scope of the project includes:
 
 ---
 
-## MEASURE Phase
+## 🔍 Analyze Phase
 
-### Data Source
+During this phase, we analyzed the root causes behind warehouse inefficiencies using Excel pivot tables, Pareto charts, and descriptive statistics. The main focus areas were:
 
-The dataset includes **30,000 synthetic warehouse transactions**, designed to simulate real-world logistics operations. Key fields include:
-
-- **Units Ordered** vs. **Units Shipped**
-- **Inventory Level** & **Reorder Point**
-- **Warehouse Picking Time (min)**
-- **Order Accuracy (%)**
-- **Lead Time (days)**
-
-Data was cleaned and analyzed in **Excel**, using formulas, filters, and pivot tables. Outliers and unrealistic values (e.g., order accuracy > 100%) were identified and excluded to ensure data quality.
+- Stockouts
+- Picking Errors
+- Order Accuracy Variability
 
 ---
 
-### Key Performance Indicators (KPIs)
+### 📊 Pareto Analysis – Stockouts by Product Category
 
-The following KPIs were defined to measure current warehouse performance:
+A Pareto-style analysis was performed on stockouts across product categories.
 
-| **KPI**                | **Description**                                              | **Value**        |
-|------------------------|--------------------------------------------------------------|------------------|
-| **Picking Error Rate** | % of orders with incorrect picking (errors in quantity/item) | **8.58%**        |
-| **Order Accuracy**     | % of orders delivered with exactly correct quantity          | **91.42%**       |
-| **Stockout Rate**      | % of orders affected by inventory shortages (stockouts)      | **25.32%**       |
-| **Avg. Picking Time**  | Average time to complete picking per order                   | **15.00 minutes**|
-| **Avg. Lead Time**     | Average time from order placement to delivery                | **5.51 days**    |
+| Product Category | Stockout Rate (%) |
+|------------------|--------------------|
+| Electronics      | 25.85%  
+| Toys             | 25.81%  
+| Furniture        | 25.17%  
+| Apparel          | 24.45%  
 
-> *All calculations were performed using Excel formulas. Cleaned values were used for final KPI reporting.*
-
----
-
-### Methodology
-
-The KPIs were calculated using logic-based Excel formulas and pivot tables. Key formula logic includes:
-
-- **Order Accuracy (%)** = `(Units Shipped / Units Ordered) * 100`
-- **Picking Error** = `1` if `Units Ordered ≠ Units Shipped`, else `0`
-- **Stockout** = `1` if `Inventory Level < Reorder Point`, else `0`
-- **Lead Time** = `Order Date – Ship Date` (for completed orders only)
-
-All calculations were performed using:
-- Excel functions: `IF()`, `COUNTIF()`, `AVERAGE()`, and Pivot Tables
-- Filtering and segmentation by: `Region`, `Product Category`, `Shipping Method`
+> **Electronics** and **Toys** show the highest stockout rates, indicating potential issues with demand forecasting or reorder point logic.
 
 ---
 
-### Initial Findings
+### 📦 Pareto Analysis – Picking Errors by Product Category
 
-Baseline analysis revealed the following insights:
+| Product Category | Picking Error Rate (%) |
+|------------------|-------------------------|
+| Electronics      | 8.68%  
+| Toys             | 8.48%  
+| Apparel          | 8.44%  
+| Furniture        | 3.73%  
 
-- Stockouts are highly concentrated in specific SKUs and product categories  
-- Picking times show high variability across regions  
-- Higher error rates observed in Same-Day shipping orders  
+> The majority of picking errors come from **Electronics**, **Toys**, and **Apparel**, suggesting a classic 80/20 Pareto pattern.  
+> **Furniture** performs significantly better, which may indicate simpler picking processes or better-trained staff.
 
-These insights will guide the Analyze Phase, where root causes will be identified and prioritized for improvement.
+---
 
+### 📐 Order Accuracy Variability by Shipping Method
+
+| Shipping Method | Avg. Accuracy (%) | Std. Deviation |
+|------------------|-------------------|----------------|
+| Same Day         | 99.52%            | 2.52%  
+| Standard         | 99.50%            | 2.59%  
+| Express          | 99.54%            | 2.44%  
+
+> **Standard shipping** shows the highest variability, suggesting that this method may lack process consistency or experience higher error pressure due to volume.
+
+---
+
+### 🏷️ Order Accuracy Variability by Product Category
+
+| Product Category | Avg. Accuracy (%) | Std. Deviation |
+|------------------|-------------------|----------------|
+| Apparel          | 99.53%            | 2.49%  
+| Electronics      | 99.52%            | 2.51%  
+| Furniture        | 99.51%            | 2.55%  
+| Toys             | 99.51%            | 2.52%  
+
+> **Furniture** products have the highest variance, possibly due to product size, handling complexity, or packaging inconsistencies.
+
+---
+
+### 🌍 Order Accuracy Variability by Region
+
+| Region | Avg. Accuracy (%) | Std. Deviation |
+|--------|-------------------|----------------|
+| East   | 99.56%            | 2.43%  
+| North  | 99.54%            | 2.46%  
+| South  | 99.50%            | 2.53%  
+| West   | 99.47%            | 2.63% ✅  
+
+> The **West region** consistently underperforms in both accuracy and stability.  
+This region should be prioritized for improvement in process training, layout optimization, or staffing evaluation.
+
+---
+
+### ✅ Summary of Root Causes Identified
+
+- High stockouts in **Electronics** and **Toys**
+- High picking error rates in **Electronics**, **Toys**, and **Apparel**
+- Increased variability in **Furniture category** and **Standard shipping method**
+- **West region** has both the lowest order accuracy and the highest variance
+
+> These findings will guide the next phase (Improve), where targeted solutions will be designed for maximum impact.
 
 ---
 
