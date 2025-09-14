@@ -99,7 +99,7 @@ In this phase, root cause analysis was conducted using Excel tools such as:
 
 ## Root Cause Identification
 
-### 🛑 Stockouts by Product Category
+### Stockouts by Product Category
 
 | Product Category | Stockout Rate (%) |
 |------------------|-------------------|
@@ -124,6 +124,7 @@ In this phase, root cause analysis was conducted using Excel tools such as:
 #### Pareto Chart – Picking Errors
 
 A Pareto chart was created to visualize the cumulative distribution of picking errors per product category.
+
 <img width="450" height="239" alt="Screenshot 2025-09-14 at 2 36 25 PM" src="https://github.com/user-attachments/assets/9eb69408-8669-4ec1-949d-8714e1998991" />
 
 
