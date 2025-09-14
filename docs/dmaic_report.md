@@ -66,24 +66,58 @@ All calculations were performed using Excel formulas and PivotTables. Financial 
 
 ### Financial Impact Overview
 
-| Metric                        | Value (€)     |
-|-------------------------------|---------------|
-| Total Orders                  | 30,000        |
-| Avg. Shipping Cost per Order  | 27.59         |
-| Total Shipping Cost           | 827,783.94    |
-| Total Picking Errors          | 2,574         |
-| Cost per Picking Error        | 5             |
-| Cost of Picking Errors        | 12,870        |
-| Total Stockouts               | 7,596         |
-| Cost per Stockout             | 10            |
-| Cost of Stockouts             | 75,960        |
+| Metric                           | Value         |
+|----------------------------------|---------------|
+| Total Orders                     | 30,000        |
+| Avg. Shipping Cost per Order (€) | 27.59         |
+| Total Shipping Cost (€)          | 827,783.94    |
+| Total Picking Errors             | 2,574         |
+| Cost per Picking Error (€)       | 5             |
+| Cost of Picking Errors (€)       | 12,870        |
+| Total Stockouts                  | 7,596         |
+| Cost per Stockout (€)            | 10            |
+| Cost of Stockouts (€)            | 75,960        |
 
 ## Additional Insights
 
 - **Shipping Cost per Region/Method** using PivotTables and Conditional Formatting.
+
+<img width="195" height="91" alt="Screenshot 2025-09-14 at 2 46 25 PM" src="https://github.com/user-attachments/assets/816c0480-de68-4772-8402-002f387e762e" />
+
+<img width="193" height="71" alt="Screenshot 2025-09-14 at 2 46 44 PM" src="https://github.com/user-attachments/assets/bd94b660-2ef3-44b2-8f84-b2a6e999b296" />
+
+
 - **Order Status Distribution** by shipping method.
+
+<img width="309" height="92" alt="Screenshot 2025-09-14 at 2 47 27 PM" src="https://github.com/user-attachments/assets/592b4e2f-f702-4318-ac9a-c46337501ed0" />
+
 - **Picking Time per Product Category**
-- **Warehouse Lead Time by Region and Product Category**
+
+<img width="250" height="85" alt="Screenshot 2025-09-14 at 2 51 11 PM" src="https://github.com/user-attachments/assets/00a8da55-0cda-4963-97c1-053d8d7845fe" />
+
+### Average Shipping Cost by Region and Delivery Method
+
+To evaluate cost efficiency, we analyzed the **average shipping cost** by **Region** and **Delivery Method** using pivot tables and conditional formatting in Excel.
+
+| Region | Express (€) | Same Day (€) | Standard (€) | Avg Total (€) |
+|--------|-------------|--------------|---------------|----------------|
+| East   | 27,33       | 27,60        | 27,37         | 27,43  
+| North  | 27,72       | 27,16        | **28,00**     | 27,63  
+| South  | 27,88       | 27,77        | 27,48         | **27,71**  
+| West   | 27,49       | 27,56        | 27,73         | 27,59  
+| **Overall Avg** | **27,61** | **27,52** | **27,65** | **27,59**
+
+**Conclusions**:
+- The **South** region has the highest average overall shipping cost.
+- The **North** region shows the **highest Standard shipping cost** at €28.00.
+- **Same Day delivery** is consistently more expensive than Express or Standard in most regions.
+
+📌 These insights indicate that:
+- Cost optimization should focus on the **Standard shipping process in North**, and
+- Strategic adjustments may reduce excessive costs in the **South**.
+
+<img width="393" height="99" alt="Screenshot 2025-09-14 at 2 54 58 PM" src="https://github.com/user-attachments/assets/063db58a-aac4-4169-ac82-6c31de64aa3b" />
+
 
 All metrics support a full understanding of current process capability and financial impact.
 
