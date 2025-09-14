@@ -48,19 +48,19 @@ These issues lead to delays, customer dissatisfaction, and higher operational co
 
 ---
 
-# 📊 MEASURE Phase
+# MEASURE Phase
 
 In this phase, KPIs were calculated using Excel on a cleaned dataset of 30,000 simulated warehouse transactions.
 
 ## Key Metrics Calculated
 
-| KPI                     | Value        |
-|-------------------------|--------------|
-| Picking Error Rate (%)  | 8.58%        |
-| Stockout Rate (%)       | 25.32%       |
-| Order Accuracy (%)      | 91.42%       |
-| Avg. Picking Time       | 15 min       |
-| Avg. Lead Time          | 5.51 days    |
+| KPI                      | Value        |
+|--------------------------|--------------|
+| Picking Error Rate (%)   | 8.58         |
+| Stockout Rate (%)        | 25.32        |
+| Order Accuracy (%)       | 91.42        |
+| Avg. Picking Time (min)  | 15           |
+| Avg. Lead Time (days     | 5.51         |
 
 All calculations were performed using Excel formulas and PivotTables. Financial impact was also estimated based on error costs:
 
@@ -112,7 +112,7 @@ To evaluate cost efficiency, we analyzed the **average shipping cost** by **Regi
 - The **North** region shows the **highest Standard shipping cost** at €28.00.
 - **Same Day delivery** is consistently more expensive than Express or Standard in most regions.
 
-📌 These insights indicate that:
+These insights indicate that:
 - Cost optimization should focus on the **Standard shipping process in North**, and
 - Strategic adjustments may reduce excessive costs in the **South**.
 
