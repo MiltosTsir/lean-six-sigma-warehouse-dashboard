@@ -48,32 +48,61 @@ These issues lead to delays, customer dissatisfaction, and higher operational co
 
 ---
 
-## MEASURE Phase
+# 📊 MEASURE Phase
 
-In this phase, KPIs were calculated using Excel on a cleaned dataset of 30,000 simulated transactions.
+In this phase, KPIs were calculated using Excel on a cleaned dataset of 30,000 simulated warehouse transactions.
 
-**Key metrics calculated:**
+## Key Metrics Calculated
 
-| KPI                  | Value        |
-|----------------------|--------------|
-| Picking Error Rate   | 8.58%        |
-| Stockout Rate        | 25.32%       |
-| Order Accuracy       | 91.42%       |
-| Avg. Picking Time    | 15 minutes   |
-| Avg. Lead Time       | 5.51 days    |
+| KPI                     | Value        |
+|-------------------------|--------------|
+| Picking Error Rate (%)  | 8.58%        |
+| Stockout Rate (%)       | 25.32%       |
+| Order Accuracy (%)      | 91.42%       |
+| Avg. Picking Time       | 15 min       |
+| Avg. Lead Time          | 5.51 days    |
 
-All calculations were performed using Excel formulas and pivot tables.
+All calculations were performed using Excel formulas and PivotTables. Financial impact was also estimated based on error costs:
+
+### Financial Impact Overview
+
+| Metric                        | Value (€)     |
+|-------------------------------|---------------|
+| Total Orders                  | 30,000        |
+| Avg. Shipping Cost per Order  | 27.59         |
+| Total Shipping Cost           | 827,783.94    |
+| Total Picking Errors          | 2,574         |
+| Cost per Picking Error        | 5             |
+| Cost of Picking Errors        | 12,870        |
+| Total Stockouts               | 7,596         |
+| Cost per Stockout             | 10            |
+| Cost of Stockouts             | 75,960        |
+
+## Additional Insights
+
+- **Shipping Cost per Region/Method** using PivotTables and Conditional Formatting.
+- **Order Status Distribution** by shipping method.
+- **Picking Time per Product Category**
+- **Warehouse Lead Time by Region and Product Category**
+
+All metrics support a full understanding of current process capability and financial impact.
 
 ---
 
-## ANALYZE Phase
+# 🔍 ANALYZE Phase
 
-Root cause analysis was conducted using Excel tools: pivot tables, Pareto charts, and segmentation by category, region, and shipping method.
+In this phase, root cause analysis was conducted using Excel tools such as:
+- PivotTables
+- Pareto Charts
+- Segmentation by Category, Region, and Shipping Method
+- Boxplots and statistical comparisons
 
-### Stockouts by Product Category
+## Root Cause Identification
+
+### 🛑 Stockouts by Product Category
 
 | Product Category | Stockout Rate (%) |
-|------------------|--------------------|
+|------------------|-------------------|
 | Electronics      | 25.85%  
 | Toys             | 25.81%  
 | Furniture        | 25.17%  
@@ -81,18 +110,22 @@ Root cause analysis was conducted using Excel tools: pivot tables, Pareto charts
 
 **Conclusion**: Electronics and Toys are responsible for the highest stockout rates.
 
----
-
-### Picking Errors by Product Category
+### 📦 Picking Errors by Product Category
 
 | Product Category | Picking Error Rate (%) |
-|------------------|-------------------------|
+|------------------|------------------------|
 | Electronics      | 8.68%  
 | Toys             | 8.48%  
 | Apparel          | 8.44%  
 | Furniture        | 3.73%  
 
-**Conclusion**: Errors are concentrated in Electronics, Toys, and Apparel (80/20 rule).
+**Conclusion**: Errors are concentrated in Electronics, Toys, and Apparel (Pareto principle 80/20).
+
+#### Pareto Chart – Picking Errors
+
+A Pareto chart was created to visualize the cumulative distribution of picking errors per product category.
+<img width="450" height="239" alt="Screenshot 2025-09-14 at 2 36 25 PM" src="https://github.com/user-attachments/assets/9eb69408-8669-4ec1-949d-8714e1998991" />
+
 
 ---
 
@@ -104,7 +137,7 @@ Root cause analysis was conducted using Excel tools: pivot tables, Pareto charts
 | Standard         | 99.50%            | 2.59%  
 | Express          | 99.54%            | 2.44%  
 
-**Conclusion**: Standard shipping shows the highest variability.
+**Conclusion**: Standard shipping shows slightly higher variability.
 
 ---
 
@@ -132,12 +165,53 @@ Root cause analysis was conducted using Excel tools: pivot tables, Pareto charts
 
 ---
 
-### Summary of Root Causes
+### 📊 Boxplot Analysis
 
-- Stockouts mainly in Electronics and Toys
-- Picking errors concentrated in Electronics, Toys, and Apparel
-- Process variability in Furniture and Standard shipping
-- Low performance in the West region
+Boxplots were created to explore variation and potential instability in key performance metrics across different categories and regions.
+
+---
+
+#### 📦 Lead Time per Region
+
+The boxplot for **Lead Time per Region** revealed that the **West region** has the highest variability and several outliers, indicating inconsistent performance and potential delays.
+
+This supports the need for targeted improvements in process standardization or training in that region.
+
+<img width="504" height="242" alt="Screenshot 2025-09-14 at 2 38 42 PM" src="https://github.com/user-attachments/assets/6bceb191-ab62-40e4-aae3-4d1acd7c8627" />
+
+---
+
+#### ⏱ Picking Time per Product Category
+
+The **Picking Time per Product Category** boxplot showed that categories like **Furniture** and **Electronics** had wider interquartile ranges and outliers.
+
+This suggests differences in picking complexity or layout efficiency across categories and justifies further investigation or layout redesign.
+
+
+<img width="509" height="210" alt="Screenshot 2025-09-14 at 2 39 01 PM" src="https://github.com/user-attachments/assets/6600a1af-60c3-4317-9a2b-fb1118802795" />
+
+
+---
+
+### 🚚 Shipping Cost vs. Picking Time
+
+Shipping cost was analyzed by **quartiles of picking time**, instead of scatter plots, for better interpretability.
+
+| Picking Time Range | Avg. Shipping Cost (€) |
+|---------------------|------------------------|
+| 0–10 min            | 27.61  
+| 11–15 min           | 27.43  
+| 16–20 min           | 27.74  
+| 21+ min             | 27.63  
+
+---
+
+## Summary of Root Causes
+
+- **Stockouts** mainly in *Electronics* and *Toys*
+- **Picking errors** mostly in *Electronics*, *Toys*, and *Apparel*
+- **Variability** observed in *Furniture* category and *Standard* shipping
+- **West region** had the lowest order accuracy and highest variability
 
 ---
 
